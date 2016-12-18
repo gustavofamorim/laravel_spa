@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
+
+
+Route::get('categories/{id}/topics', 'CategoryController@topics');
+Route::resource('categories', 'CategoryController');
+
+Route::resource('topics', 'TopicController');
