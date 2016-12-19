@@ -15,7 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return json_encode(Category::all());
+        return Category::all();
     }
 
     /**
@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        return json_encode(Category::find($id));
+        return Category::find($id);
     }
 
     /**
@@ -85,8 +85,6 @@ class CategoryController extends Controller
     }
     
     public function topics($id){
-        return json_encode(
-            Category::find($id)->topics()->orderBy('created_at', 'desc')->get()
-        );
+        return Category::find($id)->topics()->orderBy('created_at', 'desc')->get();
     }
 }
