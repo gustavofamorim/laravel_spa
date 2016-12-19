@@ -6,13 +6,13 @@
       </a>
       <div class="Topic__meta">
         <span class="Topic__author">by Foo</span>
-        <span class="Topic__time">{{ topic.time }}</span>
+        <span class="Topic__time">{{ topic.time | fromNow }}</span>
       </div>
     </div>
     <div class="Topic__stats">
       <span class="Topic__views">
         <span class="Topic__stat-number">
-          {{ topic.views }}
+          {{ topic.views | largeNumber }}
         </span>
         <small class="Topic__stat-label">
           Views
